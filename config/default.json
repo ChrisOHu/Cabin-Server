@@ -1,13 +1,19 @@
 {
+  "dbName": "RiSE",
   "host": "localhost",
   "port": 3030,
   "public": "../public/",
   "auth": {
     "idField": "id",
     "token": {
-      "secret": "tNMt62erO1OBQCRz28YJAUKI+N8IynQG5l5ozyy2pruv9udsblR3m0aYRxsad/dHNv7OZA4xiQIznwBqxHin3Q=="
+      "secret": "tNMt62erO1OBQCRz28YJAUKI+N8IynQG5l5ozyy2pruv9udsblR3m0aYRxsad/dHNv7OZA4xiQIznwBqxHin3Q==",
+      "expiresIn": "3m"
     },
-    "local": {},
+    "local": {
+      "usernameField": "email",
+      "passwordField": "password"
+    },
+    "cookie": false,
     "facebook": {
       "clientID": "your facebook client id",
       "clientSecret": "your facebook client secret",

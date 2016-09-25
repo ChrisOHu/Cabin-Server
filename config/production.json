@@ -1,13 +1,19 @@
 {
+  "dbName": "RiSE",
   "host": "RiSE-app.feathersjs.com",
   "port": 80,
   "public": "../public/",
   "auth": {
     "idField": "id",
     "token": {
-      "secret": "FEATHERS_AUTH_SECRET"
+      "secret": "FEATHERS_AUTH_SECRET",
+      "expiresIn": "3m"
     },
-    "local": {},
+    "local": {
+      "usernameField": "email",
+      "passwordField": "password"
+    },
+    "cookie": false,
     "facebook": {
       "clientID": "your facebook client id",
       "clientSecret": "your facebook client secret",
