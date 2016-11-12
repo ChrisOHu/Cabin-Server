@@ -1,13 +1,13 @@
 {
-  "name": "RiSE",
-  "description": "The RiSE server",
+  "name": "Cabin-Server",
+  "description": "The Cabin backend",
   "version": "0.0.0",
   "homepage": "",
   "main": "src/",
   "keywords": [
-    "feathers"
+    "cabin"
   ],
-  "license": "",
+  "license": "MIT",
   "repository": {},
   "author": "HuaiShun Hu (huhuaishun@gmail.com)",
   "contributors": [],
@@ -16,7 +16,7 @@
     "node": ">= 0.12.0"
   },
   "scripts": {
-    "test": "npm run eslint && npm run mocha --compilers js:babel-register",
+    "test": "npm run eslint && npm run mocha --compilers js",
     "eslint": "eslint src/. test/. --config",
     "start": "babel-node src/",
     "mocha": "mocha test/ --recursive"
@@ -26,25 +26,26 @@
     "compression": "^1.6.2",
     "cors": "^2.8.1",
     "feathers": "^2.0.2",
-    "feathers-authentication": "^0.7.10",
+    "feathers-authentication": "^0.7.12",
     "feathers-configuration": "^0.3.3",
-    "feathers-errors": "^2.4.0",
-    "feathers-hooks": "^1.5.7",
-    "feathers-rest": "^1.5.0",
-    "feathers-rethinkdb": "^0.2.3",
-    "feathers-socketio": "^1.4.1",
+    "feathers-errors": "^2.5.0",
+    "feathers-hooks": "^1.6.1",
+    "feathers-mongoose": "^3.5.3",
+    "feathers-rest": "^1.5.2",
+    "mongoose": "^4.6.7",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
     "passport-facebook-token": "^3.3.0",
-    "rethinkdbdash": "^2.3.23",
+    "passport-google-oauth20": "^1.0.0",
+    "passport-google-token": "^0.1.2",
     "serve-favicon": "^2.3.0",
-    "winston": "^2.2.0"
+    "winston": "^2.3.0"
   },
   "devDependencies": {
     "babel-cli": "^6.14.0",
     "babel-core": "^6.14.0",
     "babel-preset-es2015": "^6.14.0",
-    "mocha": "^3.0.2",
-    "request": "^2.74.0"
+    "mocha": "^3.1.2",
+    "request": "^2.78.0"
   }
 }

@@ -1,24 +1,27 @@
 {
-  "dbName": "RiSE",
-  "host": "RiSE-app.feathersjs.com",
+  "host": "Cabin-Server-app.feathersjs.com",
   "port": 80,
+  "mongodb": "DATABASE_URL",
   "public": "../public/",
   "auth": {
-    "idField": "id",
     "token": {
       "secret": "FEATHERS_AUTH_SECRET",
       "expiresIn": "3m"
     },
-    "local": {
-      "usernameField": "phone",
-      "passwordField": "password"
-    },
-    "cookie": false,
+    "local": {},
     "facebook": {
       "clientID": "your facebook client id",
       "clientSecret": "your facebook client secret",
       "permissions": {
         "scope": ["public_profile","email"]
+      }
+    },
+    "cookie": false,
+    "google": {
+      "clientID": "your google client id",
+      "clientSecret": "your google client secret",
+      "permissions": {
+        "scope": ["profile"]
       }
     }
   }

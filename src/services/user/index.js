@@ -1,24 +1,29 @@
-'use strict'
+'use strict';
 
-import hooks from './hooks'
-import service from 'feathers-rethinkdb'
+const service = require('feathers-mongoose');
+const user = require('./user-model');
+const hooks = require('./hooks');
 
-module.exports = function () {
+module.exports = function() {
   const app = this;
-  const r = app.rethinkdb
-  const dbName = app.get('dbName')
 
-  app.use('/users', service({
-    Model: r,
-    name: 'users',
+  const options = {
+    Model: user,
     paginate: {
-      default: 10,
-      max: 50
+      default: 5,
+      max: 25
     }
-  }))
+  };
 
-  const userService = app.service('/users')
-  userService.before(hooks.before)
-  userService.after(hooks.after)
-}
+  // Initialize our service with any options it requires
+  app.use('/users', service(options));
 
+  // Get our initialize service to that we can bind hooks
+  const userService = app.service('/users');
+
+  // Set up our before hooks
+  userService.before(hooks.before);
+
+  // Set up our after hooks
+  userService.after(hooks.after);
+};

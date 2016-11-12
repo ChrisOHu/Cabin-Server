@@ -1,33 +1,22 @@
-# RiSE
+# Cabin-Server
 
-> The RiSE server
+> The Cabin backend
 
-## About
+## Install & Run dev
 
-This project uses [Feathers](http://feathersjs.com). An open source web framework for building modern real-time applications.
-
-## Getting Started
-
-Getting up and running is as easy as 1, 2, 3.
-
-1. Make sure you have [NodeJS](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed.
-2. Install your dependencies
-    
-    ```
-    cd path/to/RiSE; npm install
-    ```
-
-3. Start your app
-    
-    ```
-    npm start
-    ```
+```
+npm install
+npm start
+```
 
 ## Testing
 
-Simply run `npm test` and all your tests in the `test/` directory will be run.
+```
+npm test
+```
 
-## Scaffolding
+## Feathers & To add new services, hooks, models, .etc
+This project uses [feathersjs](http://docs.feathersjs.com) which is minimal wrapper around battle-tested express/node modules.
 
 Feathers has a powerful command line interface. Here are a few things it can do:
 
@@ -40,10 +29,6 @@ $ feathers generate model                 # Generate a new Model
 $ feathers help                           # Show all commands
 ```
 
-## Help
-
-For more information on all the things you can do with Feathers visit [docs.feathersjs.com](http://docs.feathersjs.com).
-
 ## Changelog
 
 __0.1.0__
@@ -52,6 +37,5 @@ __0.1.0__
 
 ## License
 
-Copyright (c) 2016
+Copyright (c) 2016 - Future
 
-Licensed under the [MIT license](LICENSE).
