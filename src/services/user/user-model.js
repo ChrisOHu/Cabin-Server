@@ -16,16 +16,16 @@ const userSchema = new Schema({
   password:         { type: String, required: true },
   avatar:           { type: String, required: false },
   banner:           { type: String, required: false },
-  geolocation:      { type: CommonSchemas.geolocation },
+  geolocation:      CommonSchemas.geolocation,
   profession:       { type: String, required: false },
 
-  followers:        [ Schema.Types.ObjectId ],
-  followings:       [ Schema.Types.ObjectId ],
-  favoriteHomes:    [ Schema.Types.ObjectId ],
-  favoriteDesigns:  [ Schema.Types.ObjectId ],
+  followers:        { type: [ Schema.Types.ObjectId ] },
+  followings:       { type: [ Schema.Types.ObjectId ] },
+  favoriteHomes:    { type: [ Schema.Types.ObjectId ] },
+  favoriteDesigns:  { type: [ Schema.Types.ObjectId ] },
   preferences:      { type: Schema.Types.Mixed },
 
-  rules:            [ String ], // of 'default', 'host', 'designer'
+  rules:            { type: [ String ] }, // of 'default', 'host', 'designer'
   hostId:           { type: Schema.Types.ObjectId , required: false },
   designerId:       { type: Schema.Types.ObjectId , required: false },
 

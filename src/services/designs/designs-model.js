@@ -10,11 +10,11 @@ const CommonSchemas = require('../../common/schemas')
 const Schema = mongoose.Schema;
 
 const designsSchema = new Schema({
-  designer:         { type: CommonSchemas.userSnapshot },
+  designer:         CommonSchemas.userSnapshot,
   title:            { type: String },
   banner:           { type: String },
   content:          { type: String }, // Here is html
-  reviews:          { type: CommonSchemas.reviews },
+  reviews:          CommonSchemas.reviews,
 
   createdAt: { type: Date, 'default': Date.now },
   updatedAt: { type: Date, 'default': Date.now }

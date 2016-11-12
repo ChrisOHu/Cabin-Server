@@ -10,12 +10,12 @@ const CommonSchemas = require('../../common/schemas')
 const Schema = mongoose.Schema;
 
 const homesSchema = new Schema({
-  host:         { type: CommonSchemas.userSnapshot },
+  host:         CommonSchemas.userSnapshot,
 
   name:         { type: String, required: true },
   banner:       { type: String, require: true },
-  geolocation:  { type: CommonSchemas.geolocation },
-  price:        { type: CommonSchemas.QU },
+  geolocation:  CommonSchemas.geolocation,
+  price:        CommonSchemas.QU,
   status:       { type: String }, // one of 'available', 'rented'
   wifi:         { band: CommonSchemas.QU, price: CommonSchemas.QU },
   electricity:  { price: CommonSchemas.QU },
@@ -23,9 +23,9 @@ const homesSchema = new Schema({
   withTv:       { type: Boolean },
   descriptions: { type: String },
   rooms:        { type: Number },
-  pictures:     [ String ],
+  pictures:     { type: [ String ] },
 
-  reviews:      { type: CommonSchemas.reviews },
+  reviews:      CommonSchemas.reviews,
 
   createdAt:  { type: Date, 'default': Date.now },
   updatedAt:  { type: Date, 'default': Date.now }

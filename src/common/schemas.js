@@ -3,47 +3,60 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const CommonSchemas = {
-  userSnapshot: {
-    userId: String,
-    name: String,
-    avatar: String,
-    banner: String
+const QU = {
+  quantity: { type: Number },
+  unit:     { type: String }
+}
+const geolocation = {
+  latlng:   {
+    latitude:   { type: Number },
+    longitude:  { type: Number }
   },
-  homeSnapshot: {
-    homeId: String,
-    name: String,
-    reviews: CommonSchemas.reviews,
-    geolocation: CommonSchemas.geolocation,
-    price: CommonSchemas.QU
-  },
-  designSnapshot: {
-    designId: String,
-    title: String,
-    reviews: CommonSchemas.reviews
-  },
-  geolocation: {
-    latlng:   { latitude: Number, longitude: Number },
-    location: { country: String, city: String, address: String }
-  },
-  reviews: {
-    totalStars: Number,
-    starGiversCount: Number,
-    commentsCount: Number,
-    comments: [ CommonSchemas.comment ]
-  },
-  comment: {
-    avatar: String,
-    name: String,
-    likesCount: Number,
-    likedBy: [ Schema.Types.ObjectId ],
-    text: String
-  },
-  QU: {
-    quantity: Number,
-    unit: String
+  location: {
+    country: { type: String },
+    city:    { type: String },
+    address: { type: String }
   }
 }
+const comment = {
+  avatar:     { type: String },
+  name:       { type: String },
+  likesCount: { type: Number },
+  likedBy:    { type: [ Schema.Types.ObjectId ] },
+  text:       { type: String }
+}
+const reviews = {
+  totalStars:       { type: Number },
+  starGiversCount:  { type: Number },
+  commentsCount:    { type: Number },
+  comments:         { type: [ comment ] }
+}
+const userSnapshot = {
+  userId: { type: String },
+  name:   { type: String },
+  avatar: { type: String },
+  banner: { type: String }
+}
+const homeSnapshot = {
+  homeId:       { type: String },
+  name:         { type: String },
+  reviews:      reviews,
+  geolocation:  geolocation,
+  price:        QU
+}
+const designSnapshot = {
+  designId: { type: String },
+  title:    { type: String },
+  reviews:  reviews
+}
 
-export default CommonSchemas
+export {
+  QU,
+  geolocation,
+  comment,
+  userSnapshot,
+  homeSnapshot,
+  designSnapshot,
+  reviews
+}
 

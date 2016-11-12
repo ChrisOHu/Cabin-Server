@@ -10,12 +10,12 @@ const CommonSchemas = require('../../common/schemas')
 const Schema = mongoose.Schema;
 
 const designersSchema = new Schema({
-  user:       { type: CommonSchemas.userSnapshot, required: true },
+  user:       CommonSchemas.userSnapshot,
   banner:     { type: String, required: false },
   intro:      { type: String, required: true },
-  designs:    [ CommonSchemas.designSnapshot ],
+  designs:    { type: [ CommonSchemas.designSnapshot ] },
   followers:  { type: Number },
-  reviews:    { type: CommonSchemas.reviews },
+  reviews:    CommonSchemas.reviews,
 
 
   createdAt: { type: Date, 'default': Date.now },
