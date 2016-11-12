@@ -1,5 +1,6 @@
 'use strict';
 
+exports.myHook = function(options) {
   /**
    * The hook context:
    *
@@ -11,8 +12,8 @@
    * * app      - The app object
    * * id       - The id (for get, remove, update and patch)
    */
-exports.myHook = function(options) {
   return function(hook) {
     console.log('My custom global hook ran. Feathers is awesome!');
   };
 };
+

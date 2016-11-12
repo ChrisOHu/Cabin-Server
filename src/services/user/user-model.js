@@ -6,20 +6,39 @@
 // for more of what you can do here.
 
 const mongoose = require('mongoose');
+const CommonSchemas = require('../../common/schemas')
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-  facebookId: { type: String },
-  facebook: { type: Schema.Types.Mixed },
-  googleId: { type: String },
-  google: { type: Schema.Types.Mixed },
-  email: {type: String, required: true, unique: true},
-  password: { type: String, required: true },
-  
-  createdAt: { type: Date, 'default': Date.now },
-  updatedAt: { type: Date, 'default': Date.now }
+  name:             { type: String, required: true },
+  email:            { type: String, required: false, unique: true },
+  phone:            { type: String, required: false, unique: true },
+  password:         { type: String, required: true },
+  avatar:           { type: String, required: false },
+  banner:           { type: String, required: false },
+  geolocation:      { type: CommonSchemas.geolocation },
+  profession:       { type: String, required: false },
+
+  followers:        [ Schema.Types.ObjectId ],
+  followings:       [ Schema.Types.ObjectId ],
+  favoriteHomes:    [ Schema.Types.ObjectId ],
+  favoriteDesigns:  [ Schema.Types.ObjectId ],
+  preferences:      { type: Schema.Types.Mixed },
+
+  rules:            [ String ], // of 'default', 'host', 'designer'
+  hostId:           { type: Schema.Types.ObjectId , required: false },
+  designerId:       { type: Schema.Types.ObjectId , required: false },
+
+  facebookId:       { type: String },
+  facebook:         { type: Schema.Types.Mixed },
+  googleId:         { type: String },
+  google:           { type: Schema.Types.Mixed },
+
+  createdAt:        { type: Date, 'default': Date.now },
+  updatedAt:        { type: Date, 'default': Date.now }
 });
 
 const userModel = mongoose.model('user', userSchema);
 
 module.exports = userModel;
+
