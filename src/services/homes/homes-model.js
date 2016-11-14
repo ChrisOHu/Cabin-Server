@@ -12,8 +12,8 @@ const Schema = mongoose.Schema;
 const homesSchema = new Schema({
   host:         CommonSchemas.userSnapshot,
 
-  name:         { type: String, required: true },
-  banner:       { type: String, require: true },
+  name:         { type: String },
+  banner:       { type: String },
   geolocation:  CommonSchemas.geolocation,
   price:        CommonSchemas.QU,
   status:       { type: String }, // one of 'available', 'rented'

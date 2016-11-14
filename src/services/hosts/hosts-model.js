@@ -11,8 +11,8 @@ const Schema = mongoose.Schema;
 
 const hostsSchema = new Schema({
   user:       CommonSchemas.userSnapshot,
-  banner:     { type: String, required: false },
-  intro:      { type: String, required: true },
+  banner:     { type: String },
+  intro:      { type: String },
   homes:      { type: [ CommonSchemas.homeSnapshot ] },
   followers:  { type: Number },
   reviews:    CommonSchemas.reviews,

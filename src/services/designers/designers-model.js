@@ -11,8 +11,8 @@ const Schema = mongoose.Schema;
 
 const designersSchema = new Schema({
   user:       CommonSchemas.userSnapshot,
-  banner:     { type: String, required: false },
-  intro:      { type: String, required: true },
+  banner:     { type: String },
+  intro:      { type: String },
   designs:    { type: [ CommonSchemas.designSnapshot ] },
   followers:  { type: Number },
   reviews:    CommonSchemas.reviews,

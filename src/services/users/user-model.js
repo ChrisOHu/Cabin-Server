@@ -10,14 +10,15 @@ const CommonSchemas = require('../../common/schemas')
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-  name:             { type: String, required: true },
-  email:            { type: String, required: false, unique: true },
-  phone:            { type: String, required: false, unique: true },
+  phone:            { type: String, required: true, unique: true },
   password:         { type: String, required: true },
-  avatar:           { type: String, required: false },
-  banner:           { type: String, required: false },
+
+  name:             { type: String },
+  email:            { type: String, unique: true },
+  avatar:           { type: String },
+  banner:           { type: String },
   geolocation:      CommonSchemas.geolocation,
-  profession:       { type: String, required: false },
+  profession:       { type: String },
 
   followers:        { type: [ Schema.Types.ObjectId ] },
   followings:       { type: [ Schema.Types.ObjectId ] },
@@ -26,8 +27,8 @@ const userSchema = new Schema({
   preferences:      { type: Schema.Types.Mixed },
 
   rules:            { type: [ String ] }, // of 'default', 'host', 'designer'
-  hostId:           { type: Schema.Types.ObjectId , required: false },
-  designerId:       { type: Schema.Types.ObjectId , required: false },
+  hostId:           { type: Schema.Types.ObjectId },
+  designerId:       { type: Schema.Types.ObjectId },
 
   facebookId:       { type: String },
   facebook:         { type: Schema.Types.Mixed },
