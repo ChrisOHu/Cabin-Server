@@ -8,7 +8,10 @@
       "secret": "GNSwSy9LqHeKiCvtAKYczpBoMXT8YUyUnBP1G/XpggJhjCt6X3QJoDPZIlfGjsuweALl18Ls+yv6V43r1T319Q==",
       "expiresIn": "3m"
     },
-    "local": {},
+    "local": {
+      "usernameField": "phone",
+      "passwordField": "password"
+    },
     "facebook": {
       "clientID": "your facebook client id",
       "clientSecret": "your facebook client secret",
