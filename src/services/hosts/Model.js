@@ -1,6 +1,6 @@
 'use strict';
 
-// designers-model.js - A mongoose model
+// hosts-model.js - A mongoose model
 // 
 // See http://mongoosejs.com/docs/models.html
 // for more of what you can do here.
@@ -9,11 +9,12 @@ const mongoose = require('mongoose');
 const CommonSchemas = require('../../common/schemas')
 const Schema = mongoose.Schema;
 
-const designersSchema = new Schema({
+const hostsSchema = new Schema({
+  userId:     { type: Schema.Types.ObjectId, required: true, unique: true },
   user:       CommonSchemas.userSnapshot,
   banner:     { type: String },
   intro:      { type: String },
-  designs:    { type: [ CommonSchemas.designSnapshot ] },
+  homes:      { type: [ CommonSchemas.homeSnapshot ] },
   followers:  { type: Number },
   reviews:    CommonSchemas.reviews,
 
@@ -22,7 +23,6 @@ const designersSchema = new Schema({
   updatedAt: { type: Date, 'default': Date.now }
 });
 
-const designersModel = mongoose.model('designers', designersSchema);
+const hostsModel = mongoose.model('hosts', hostsSchema);
 
-module.exports = designersModel;
-
+module.exports = hostsModel;

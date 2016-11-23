@@ -32,20 +32,20 @@ const reviews = {
   comments:         { type: [ comment ] }
 }
 const userSnapshot = {
-  userId: { type: String },
+  userId: { type: Schema.Types.ObjectId },
   name:   { type: String },
   avatar: { type: String },
   banner: { type: String }
 }
 const homeSnapshot = {
-  homeId:       { type: String },
+  homeId:       { type: Schema.Types.ObjectId },
   name:         { type: String },
   reviews:      reviews,
   geolocation:  geolocation,
   price:        QU
 }
 const designSnapshot = {
-  designId: { type: String },
+  designId: { type: Schema.Types.ObjectId },
   title:    { type: String },
   reviews:  reviews
 }

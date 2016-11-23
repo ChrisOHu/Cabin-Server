@@ -26,7 +26,6 @@ const userSchema = new Schema({
   favoriteDesigns:  { type: [ Schema.Types.ObjectId ] },
   preferences:      { type: Schema.Types.Mixed },
 
-  rules:            { type: [ String ] }, // of 'default', 'host', 'designer'
   hostId:           { type: Schema.Types.ObjectId },
   designerId:       { type: Schema.Types.ObjectId },
 

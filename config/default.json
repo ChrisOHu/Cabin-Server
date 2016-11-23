@@ -6,6 +6,7 @@
   "auth": {
     "token": {
       "secret": "GNSwSy9LqHeKiCvtAKYczpBoMXT8YUyUnBP1G/XpggJhjCt6X3QJoDPZIlfGjsuweALl18Ls+yv6V43r1T319Q==",
+      "algorithm": "HS256",
       "expiresIn": "1y"
     },
     "local": {
