@@ -19,11 +19,10 @@ const geolocation = {
   }
 }
 const comment = {
-  avatar:     { type: String },
-  name:       { type: String },
+  userId:     { type: Schema.Types.ObjectId },
+  text:       { type: String },
   likesCount: { type: Number },
-  likedBy:    { type: [ Schema.Types.ObjectId ] },
-  text:       { type: String }
+  likedBy:    { type: [ Schema.Types.ObjectId ] }
 }
 const reviews = {
   totalStars:       { type: Number },
@@ -31,32 +30,11 @@ const reviews = {
   commentsCount:    { type: Number },
   comments:         { type: [ comment ] }
 }
-const userSnapshot = {
-  userId: { type: Schema.Types.ObjectId },
-  name:   { type: String },
-  avatar: { type: String },
-  banner: { type: String }
-}
-const homeSnapshot = {
-  homeId:       { type: Schema.Types.ObjectId },
-  name:         { type: String },
-  reviews:      reviews,
-  geolocation:  geolocation,
-  price:        QU
-}
-const designSnapshot = {
-  designId: { type: Schema.Types.ObjectId },
-  title:    { type: String },
-  reviews:  reviews
-}
 
 export {
   QU,
   geolocation,
   comment,
-  userSnapshot,
-  homeSnapshot,
-  designSnapshot,
   reviews
 }
 

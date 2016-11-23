@@ -10,7 +10,7 @@ const CommonSchemas = require('../../common/schemas')
 const Schema = mongoose.Schema;
 
 const homesSchema = new Schema({
-  host:         CommonSchemas.userSnapshot,
+  hostId:       { type: Schema.Types.ObjectId, required: true },
 
   name:         { type: String },
   banner:       { type: String },

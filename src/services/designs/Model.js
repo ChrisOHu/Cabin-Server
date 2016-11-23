@@ -10,7 +10,7 @@ const CommonSchemas = require('../../common/schemas')
 const Schema = mongoose.Schema;
 
 const designsSchema = new Schema({
-  designer:         CommonSchemas.userSnapshot,
+  designerId:       { type: Schema.Types.ObjectId, required: true },
   title:            { type: String },
   banner:           { type: String },
   content:          { type: String }, // Here is html

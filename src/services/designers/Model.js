@@ -11,11 +11,10 @@ const Schema = mongoose.Schema;
 
 const designersSchema = new Schema({
   userId:     { type: Schema.Types.ObjectId, required: true, unique: true },
-  user:       CommonSchemas.userSnapshot,
   banner:     { type: String },
   intro:      { type: String },
-  designs:    { type: [ CommonSchemas.designSnapshot ] },
-  followers:  { type: Number },
+  designs:    { type: [ Schema.Types.ObjectId ] },
+  followers:  { type: [ Schema.Types.ObjectId ] },
   reviews:    CommonSchemas.reviews,
 
 
