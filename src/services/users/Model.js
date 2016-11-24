@@ -26,9 +26,6 @@ const userSchema = new Schema({
   favoriteDesigns:  { type: [ Schema.Types.ObjectId ] },
   preferences:      { type: Schema.Types.Mixed },
 
-  hostId:           { type: Schema.Types.ObjectId },
-  designerId:       { type: Schema.Types.ObjectId },
-
   facebookId:       { type: String },
   facebook:         { type: Schema.Types.Mixed },
   googleId:         { type: String },

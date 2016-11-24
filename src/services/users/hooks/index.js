@@ -19,6 +19,7 @@ exports.before = {
     auth.restrictToOwner({ ownerField: '_id' })
   ],
   create: [
+    // common.validate(...),
     auth.hashPassword()
   ],
   update: [

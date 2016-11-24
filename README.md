@@ -4,6 +4,14 @@
 
 ## Install & Run dev
 
+This project uses [feathersjs](http://docs.feathersjs.com) which is minimal wrapper around battle-tested express/node modules.
+
+First install feathers-cli:
+```
+$ npm install -g feathers-cli             # Install Feathers CLI
+```
+
+Then:
 ```
 npm install
 npm start
@@ -15,14 +23,11 @@ npm start
 npm test
 ```
 
-## Feathers & To add new services, hooks, models, .etc
-This project uses [feathersjs](http://docs.feathersjs.com) which is minimal wrapper around battle-tested express/node modules.
+## Add new services, hooks, models, .etc
 
 Feathers has a powerful command line interface. Here are a few things it can do:
 
 ```
-$ npm install -g feathers-cli             # Install Feathers CLI
-
 $ feathers generate service               # Generate a new Service
 $ feathers generate hook                  # Generate a new Hook
 $ feathers generate model                 # Generate a new Model
@@ -37,5 +42,5 @@ __0.1.0__
 
 ## License
 
-Copyright (c) 2016 - Future
+Copyright (c) huhuaishun@gmail.com 2016 - Future
 

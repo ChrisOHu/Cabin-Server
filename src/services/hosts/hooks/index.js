@@ -38,7 +38,7 @@ exports.before = {
 
 exports.after = {
   all: [
-    populate('userId', {service: '/users', field: 'user', docFields: ['name', 'avatar', 'banner']})
+    populate('user', {service: '/users', field: 'userId', docFields: ['_id', 'name', 'avatar', 'banner']})
   ],
   find: [],
   get: [],

@@ -32,7 +32,7 @@ export default class Hosts extends Service {
     return super.get(id, params)
   }
   create(data, params) {
-    return super.create(host, params)
+    return super.create(data, params)
   }
   update(id, data, params) {
 
