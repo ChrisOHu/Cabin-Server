@@ -18,7 +18,7 @@ const userSchema = new Schema({
   avatar:           { type: String },
   banner:           { type: String },
   geolocation:      CommonSchemas.geolocation,
-  profession:       { type: String },
+  profession:       { type: [ String ] },
 
   followers:        { type: [ Schema.Types.ObjectId ] },
   followings:       { type: [ Schema.Types.ObjectId ] },

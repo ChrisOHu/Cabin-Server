@@ -1,11 +1,10 @@
 'use strict';
 
-const globalHooks = require('../../../hooks');
-const hooks = require('feathers-hooks');
-const auth = require('feathers-authentication').hooks;
-const common = require('feathers-hooks-common');
 
 import { populate } from '../../../common/hooks'
+import globalHooks from '../../../hooks'
+const auth = require('feathers-authentication').hooks
+const common = require('feathers-hooks-common')
 
 exports.before = {
   all: [],

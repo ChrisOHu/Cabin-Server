@@ -1,15 +1,16 @@
 'use strict';
 
-const globalHooks = require('../../../hooks');
-const hooks = require('feathers-hooks');
-const auth = require('feathers-authentication').hooks;
+import { populate } from '../../../common/hooks'
+import globalHooks from '../../../hooks'
+const auth = require('feathers-authentication').hooks
+const common = require('feathers-hooks-common')
 
 exports.before = {
   all: [],
   find: [
-    auth.verifyToken(),
-    auth.populateUser(),
-    auth.restrictToAuthenticated()
+    // auth.verifyToken(),
+    // auth.populateUser(),
+    // auth.restrictToAuthenticated()
   ],
   get: [
     auth.verifyToken(),
@@ -41,8 +42,12 @@ exports.before = {
 };
 
 exports.after = {
-  all: [hooks.remove('password')],
-  find: [],
+  all: [
+    common.remove('password')
+  ],
+  find: [
+    common.pluck('_id', 'name', 'avatar', 'banner', 'geolocation', 'profession', 'followers', 'followings', 'favoriteHomes', 'favoriteDesigns', 'hostId', 'designerId')
+  ],
   get: [],
   create: [],
   update: [],
