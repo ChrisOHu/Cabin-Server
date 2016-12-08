@@ -1,0 +1,4 @@
+[submodule "feathers-blob"]
+  path = ~/Projects/Node/feathers-blob
+  url = git@github.com:ChrisOHu/feathers-blob.git
+

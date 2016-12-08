@@ -31,3 +31,4 @@ app.use(compress())
   .configure(middleware);
 
 module.exports = app;
+
