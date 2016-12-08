@@ -18,6 +18,7 @@ const app = feathers();
 
 app.configure(configuration(path.join(__dirname, '..')));
 
+const uploads = require('./modules/uploads')({destDir: app.get('public') + '/uploads/'})
 app.use(compress())
   .options('*', cors())
   .use(cors())
@@ -25,6 +26,10 @@ app.use(compress())
   .use('/', serveStatic( app.get('public') ))
   .use(bodyParser.json())
   .use(bodyParser.urlencoded({ extended: true }))
+  .post('/uploads', uploads.single('file'), function(req, res, next) {
+    const url = req.file ? 'http://localhost:3030/uploads/' + req.file.filename : ""
+    res.status(200).json({url})
+  })
   .configure(hooks())
   .configure(rest())
   .configure(services)

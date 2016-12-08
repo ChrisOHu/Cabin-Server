@@ -1,5 +1,4 @@
 'use strict';
-const uploads = require('./uploads');
 const designs = require('./designs');
 const hosts = require('./hosts');
 const designers = require('./designers');
@@ -19,5 +18,4 @@ module.exports = function() {
   app.configure(designers);
   app.configure(hosts);
   app.configure(designs);
-  app.configure(uploads);
 };
