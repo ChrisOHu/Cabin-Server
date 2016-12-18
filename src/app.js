@@ -26,9 +26,20 @@ app.use(compress())
   .use('/', serveStatic( app.get('public') ))
   .use(bodyParser.json())
   .use(bodyParser.urlencoded({ extended: true }))
-  .post('/uploads', uploads.single('file'), function(req, res, next) {
-    const url = req.file ? 'http://localhost:3030/uploads/' + req.file.filename : ""
+  .post('/uploads/file', uploads.single('file'), function(req, res, next) {
+    const file = req.file
+    const urlPrefix = 'http://' + app.get('host') + ':' + app.get('port') + '/uploads/'
+    let url = urlPrefix + file.filename
     res.status(200).json({url})
+  })
+  .post('/uploads/files', uploads.array('files', 9), function(req, res, next) {
+    const files = req.files
+    let urls = []
+    const urlPrefix = 'http://' + app.get('host') + ':' + app.get('port') + '/uploads/'
+    files && files.forEach((file, i, a) => {
+      urls.push(urlPrefix + file.filename)
+    })
+    res.status(200).json({urls})
   })
   .configure(hooks())
   .configure(rest())
